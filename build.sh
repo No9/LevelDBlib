@@ -3,6 +3,7 @@
 version=leveldb-1.11.0
 
 git submodule init
+git submodule update
 cp ./node-leveldown/deps/leveldb/$version/db . -fr
 cp ./node-leveldown/deps/leveldb/$version/doc . -fr
 cp ./node-leveldown/deps/leveldb/$version/helpers . -fr
