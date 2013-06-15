@@ -17,8 +17,9 @@ Then check out this repo. cd into the top level folder and and run ./build.sh
 ```
 git clone git://github.com/No9/leveldown-mobile.git
 cd leveldown-mobile
-ndk-build
+./build.sh
 ```
 ## Notes 
 
 The level-* integration is WIP.
+Currently depends on node-leveldown v0.6.0
