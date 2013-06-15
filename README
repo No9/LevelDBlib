@@ -1,57 +1,24 @@
+# leveldown-mobile
 
-Using LevelDB_Android_lib consists on applying the LevelDB_Android_lib project as a library to your application. 
-A complete description on how to use library projects is given on the Android documentation website. 
-Make sure your development environment uses the latest tools and platforms, since older releases of the tools and platforms do not support building with library project.
+## Introduction
 
+This is a fork of LevelDbLib that aims to provide full leveldown on Android and IOS.
+It will probably use some sort of phonegap-esc approach to provide a javascript runtime to leverage the level-* stack. However the aim is to bypass the browser restrictions on file size and the lack of indexeddb capability on the current set of native phone browsers. 
 
-leveldb: A key-value store
-Authors: Sanjay Ghemawat (sanjay@google.com) and Jeff Dean (jeff@google.com)
+## Build 
 
-The code under this directory implements a system for maintaining a
-persistent key/value store.
+Install the android native development toolkit. Version used : android-ndk-r8e
+Setup your environments to point to the android-ndk-r8e Folder
 
-See doc/index.html for more explanation.
-See doc/impl.html for a brief overview of the implementation.
+```exports PATH=$PATH:/PATHTOINSTALLFOLDER```
 
-The public interface is in include/*.h.  Callers should not include or
-rely on the details of any other header files in this package.  Those
-internal APIs may be changed without warning.
+Then check out this repo. cd into the top level folder and and run ./build.sh
 
-Guide to header files:
+```
+git clone git://github.com/No9/leveldown-mobile.git
+cd leveldown-mobile
+ndk-build
+```
+## Notes 
 
-include/db.h
-    Main interface to the DB: Start here
-
-include/options.h
-    Control over the behavior of an entire database, and also
-    control over the behavior of individual reads and writes.
-
-include/comparator.h
-    Abstraction for user-specified comparison function.  If you want
-    just bytewise comparison of keys, you can use the default comparator,
-    but clients can write their own comparator implementations if they
-    want custom ordering (e.g. to handle different character
-    encodings, etc.)
-
-include/iterator.h
-    Interface for iterating over data. You can get an iterator
-    from a DB object.
-
-include/write_batch.h
-    Interface for atomically applying multiple updates to a database.
-
-include/slice.h
-    A simple module for maintaining a pointer and a length into some
-    other byte array.
-
-include/status.h
-    Status is returned from many of the public interfaces and is used
-    to report success and various kinds of errors.
-
-include/env.h
-    Abstraction of the OS environment.  A posix implementation of
-    this interface is in util/env_posix.cc
-
-include/table.h
-include/table_builder.h
-    Lower-level modules that most clients probably won't use directly
+The level-* integration is WIP.

@@ -14,3 +14,9 @@ bin
 .settings
 obj
 libs
+doc
+helpers
+include
+port
+table
+util

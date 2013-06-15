@@ -1,0 +1,3 @@
+[submodule "node-leveldown"]
+	path = node-leveldown
+	url = git@github.com:rvagg/node-leveldown.git
